@@ -1,10 +1,11 @@
 {
   "name": "worktree-squad",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parallel git worktrees with editor panes in tmux",
   "type": "module",
   "bin": {
-    "ws": "./bin/ws.js"
+    "worktree-squad": "./bin/ws.js",
+    "wtsq": "./bin/ws.js"
   },
   "keywords": ["git", "worktree", "tmux"],
   "license": "MIT",

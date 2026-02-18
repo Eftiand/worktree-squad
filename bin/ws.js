@@ -11,7 +11,7 @@ import { nuke } from "../lib/commands/nuke.js";
 const program = new Command();
 
 program
-  .name("ws")
+  .name("worktree-squad")
   .description("worktree-squad — Parallel git worktrees with editor panes in tmux")
   .helpOption("--help", "display help")
   .version("1.0.0", "--version");
