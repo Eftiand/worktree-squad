@@ -1,0 +1,20 @@
+{
+  "name": "worktree-squad",
+  "version": "1.0.0",
+  "description": "Parallel git worktrees with editor panes in tmux",
+  "type": "module",
+  "bin": {
+    "ws": "./bin/ws.js"
+  },
+  "keywords": ["git", "worktree", "tmux"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "postinstall": "mkdir -p ~/.local/bin && ln -sf \"$(pwd)/bin/ws.js\" ~/.local/bin/ws"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}
