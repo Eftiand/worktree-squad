@@ -11,9 +11,7 @@
   "engines": {
     "node": ">=18"
   },
-  "scripts": {
-    "postinstall": "mkdir -p ~/.local/bin && ln -sf \"$(pwd)/bin/ws.js\" ~/.local/bin/ws"
-  },
+  "scripts": {},
   "dependencies": {
     "commander": "^13.1.0"
   }

@@ -11,8 +11,7 @@ CLI for managing parallel git worktrees as tmux panes. Create a worktree, get an
 ## Install
 
 ```bash
-git clone <repo-url> && cd worktree-squad
-npm install   # links `ws` to ~/.local/bin/ws
+npm install -g worktree-squad
 ```
 
 ## Usage
