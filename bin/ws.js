@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
+import { createRequire } from "node:module";
 import { list } from "../lib/commands/list.js";
 import { cmdNew } from "../lib/commands/new.js";
 import { attach } from "../lib/commands/attach.js";
@@ -8,13 +9,15 @@ import { kill } from "../lib/commands/kill.js";
 import { done } from "../lib/commands/done.js";
 import { nuke } from "../lib/commands/nuke.js";
 
+const { version } = createRequire(import.meta.url)("../package.json");
+
 const program = new Command();
 
 program
   .name("worktree-squad")
   .description("worktree-squad — Parallel git worktrees with editor panes in tmux")
   .helpOption("--help", "display help")
-  .version("1.0.0", "--version");
+  .version(version, "--version");
 
 program
   .command("new")
