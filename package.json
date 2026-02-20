@@ -5,7 +5,6 @@
   "type": "module",
   "bin": {
     "worktree-squad": "./bin/ws.js",
-    "wtsq": "./bin/ws.js",
     "ws": "./bin/ws.js"
   },
   "keywords": ["git", "worktree", "tmux"],
