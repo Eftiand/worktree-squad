@@ -21,10 +21,10 @@ program
   .description("Create worktree + editor pane")
   .argument("<name>", "worktree name")
   .argument("[base]", "base branch", "HEAD")
-  .option("-v", "split below")
-  .option("-h", "split right (default)")
+  .option("-v", "split below (default)")
+  .option("-h", "split right")
   .action((name, base, opts) => {
-    const splitDir = opts.v ? "-v" : "-h";
+    const splitDir = opts.h ? "-h" : "-v";
     cmdNew(name, base, splitDir);
   });
 
@@ -33,10 +33,10 @@ program
   .alias("a")
   .description("Open existing worktree in pane")
   .argument("<name>", "worktree name")
-  .option("-v", "split below")
-  .option("-h", "split right (default)")
+  .option("-v", "split below (default)")
+  .option("-h", "split right")
   .action((name, opts) => {
-    const splitDir = opts.v ? "-v" : "-h";
+    const splitDir = opts.h ? "-h" : "-v";
     attach(name, splitDir);
   });
 

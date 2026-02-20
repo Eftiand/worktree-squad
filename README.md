@@ -39,7 +39,8 @@ Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/con
   "worktreeDir": "worktrees",
   "branchPrefix": "kj",
   "editor": "nvim .",
-  "copyDirs": ["config-overrides"]
+  "copyDirs": ["config-overrides"],
+  "symlinkFiles": [".env", ".nvmrc"]
 }
 ```
 
@@ -49,6 +50,7 @@ Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/con
 | `branchPrefix` | `kj` | Branch naming: `<prefix>/<name>` |
 | `editor` | `nvim .` | Shell command run in each pane |
 | `copyDirs` | `["config-overrides"]` | Dirs copied from repo root into new worktrees |
+| `symlinkFiles` | `[]` | Files or dirs symlinked from repo root into new worktrees |
 
 ## License
 
