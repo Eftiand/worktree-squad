@@ -1,6 +1,6 @@
 {
   "name": "worktree-squad",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parallel git worktrees with editor panes in tmux",
   "type": "module",
   "bin": {
