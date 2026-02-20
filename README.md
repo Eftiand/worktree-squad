@@ -1,6 +1,6 @@
 # worktree-squad
 
-CLI for managing parallel git worktrees as tmux panes. Create a worktree, get an editor in a split — one command.
+Work on multiple things at once without stashing, switching branches, or losing context. Each `wtsq new` creates a git worktree on its own branch and opens your editor in a new tmux pane — ready to code in seconds.
 
 ## Requirements
 
@@ -14,29 +14,32 @@ CLI for managing parallel git worktrees as tmux panes. Create a worktree, get an
 npm install -g worktree-squad
 ```
 
-## Usage
+## Get started
 
 ```bash
-worktree-squad new auth-flow          # create worktree + open editor in new pane
-worktree-squad new auth-flow main -v  # based on main, split vertically
-worktree-squad attach auth-flow       # reopen existing worktree in a pane
-worktree-squad ls                     # list worktrees
-worktree-squad done auth-flow         # remove worktree, checkout its branch
-worktree-squad kill auth-flow         # remove worktree + delete branch
-worktree-squad nuke                   # remove all worktrees (confirms first)
+ws new auth-flow    # new branch + worktree + editor pane, all at once
+ws ls               # see what's running
+ws done auth-flow   # finished — remove worktree, keep the branch
+ws kill auth-flow   # scrap it — remove worktree and branch
 ```
 
-Each `ws new` creates a branch (`<prefix>/<name>`), a worktree directory, and splits your current tmux window with your editor pointed at it. Panes auto-equalize after every operation.
+## All commands
 
-`done` preserves the branch (switches your main worktree to it). `kill` deletes both worktree and branch.
+```bash
+ws new <name> [base]   # create worktree from base branch (default: HEAD)
+ws attach <name>       # reopen an existing worktree in a pane
+ws ls                  # list active worktrees
+ws done <name>         # remove worktree, switch main to its branch
+ws kill <name>         # remove worktree + delete branch
+ws nuke                # remove all worktrees (asks first)
+```
 
 ## Configuration
 
-Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/config.json` globally:
+Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/config.json` for a global default:
 
 ```json
 {
-  "worktreeDir": "worktrees",
   "branchPrefix": "kj",
   "editor": "nvim .",
   "copyDirs": ["config-overrides"],
@@ -46,11 +49,11 @@ Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/con
 
 | Key | Default | Description |
 |-----|---------|-------------|
-| `worktreeDir` | `worktrees` | Directory for worktrees (auto-added to `.gitignore`) |
+| `worktreeDir` | `worktrees` | Where worktrees are created (auto-added to `.gitignore`) |
 | `branchPrefix` | `kj` | Branch naming: `<prefix>/<name>` |
-| `editor` | `nvim .` | Shell command run in each pane |
-| `copyDirs` | `["config-overrides"]` | Dirs copied from repo root into new worktrees |
-| `symlinkFiles` | `[]` | Files or dirs symlinked from repo root into new worktrees |
+| `editor` | `nvim .` | Command to open in each pane |
+| `copyDirs` | `[]` | Dirs to copy from repo root into each new worktree |
+| `symlinkFiles` | `[]` | Files or dirs to symlink from repo root into each new worktree |
 
 ## License
 
