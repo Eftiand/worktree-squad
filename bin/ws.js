@@ -15,7 +15,7 @@ const program = new Command();
 
 program
   .name("worktree-squad")
-  .description("worktree-squad — Parallel git worktrees with editor panes in tmux")
+  .description("worktree-squad — Parallel git worktrees with editor panes in herdr")
   .helpOption("--help", "display help")
   .version(version, "--version");
 
@@ -27,8 +27,8 @@ program
   .option("-v", "split below (default)")
   .option("-h", "split right")
   .action((name, base, opts) => {
-    const splitDir = opts.h ? "-h" : "-v";
-    cmdNew(name, base, splitDir);
+    const direction = opts.h ? "right" : "down";
+    cmdNew(name, base, direction);
   });
 
 program
@@ -39,8 +39,8 @@ program
   .option("-v", "split below (default)")
   .option("-h", "split right")
   .action((name, opts) => {
-    const splitDir = opts.h ? "-h" : "-v";
-    attach(name, splitDir);
+    const direction = opts.h ? "right" : "down";
+    attach(name, direction);
   });
 
 program

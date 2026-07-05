@@ -1,12 +1,12 @@
 # worktree-squad
 
-Work on multiple things at once without stashing, switching branches, or losing context. Each `wtsq new` creates a git worktree on its own branch and opens your editor in a new tmux pane — ready to code in seconds.
+Work on multiple things at once without stashing, switching branches, or losing context. Each `ws new` creates a git worktree on its own branch and opens your editor in a new [herdr](https://herdr.dev) pane — ready to code in seconds.
 
 ## Requirements
 
 - Node.js >= 18
 - git
-- tmux
+- herdr
 
 ## Install
 

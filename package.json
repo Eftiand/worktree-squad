@@ -1,7 +1,7 @@
 {
   "name": "worktree-squad",
   "version": "1.0.4",
-  "description": "Parallel git worktrees with editor panes in tmux",
+  "description": "Parallel git worktrees with editor panes in herdr",
   "type": "module",
   "bin": {
     "worktree-squad": "./bin/ws.js",
@@ -10,7 +10,7 @@
   "keywords": [
     "git",
     "worktree",
-    "tmux"
+    "herdr"
   ],
   "license": "MIT",
   "engines": {
