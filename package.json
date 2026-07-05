@@ -1,6 +1,6 @@
 {
   "name": "worktree-squad",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Parallel git worktrees with editor panes in herdr",
   "type": "module",
   "bin": {
