@@ -42,7 +42,7 @@ Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/con
 {
   "branchPrefix": "kj",
   "editor": "nvim .",
-  "copyDirs": ["config-overrides"],
+  "copy": ["config-overrides.json", "apps/web/.env.local"],
   "symlinkFiles": [".env", ".nvmrc"]
 }
 ```
@@ -52,7 +52,7 @@ Place `.worktree-squad.json` at your repo root, or `~/.config/worktree-squad/con
 | `worktreeDir` | `worktrees` | Where worktrees are created (auto-added to `.gitignore`) |
 | `branchPrefix` | `kj` | Branch naming: `<prefix>/<name>` |
 | `editor` | `nvim .` | Command to open in each pane |
-| `copyDirs` | `[]` | Dirs to copy from repo root into each new worktree |
+| `copy` | `[]` | Files or dirs to copy from repo root into each new worktree (skipped if already there). `copyDirs` is still accepted as an alias |
 | `symlinkFiles` | `[]` | Files or dirs to symlink from repo root into each new worktree |
 
 ## License
